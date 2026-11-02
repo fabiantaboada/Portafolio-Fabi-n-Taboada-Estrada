@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Portafolio profesional de Fabián Taboada Estrada: diseño gráfico, ilustración digital y producción audiovisual.">
+  <title>Fabián Taboada Estrada | Portafolio</title>
+  <style>
+    :root{
+      --ink:#172033;--muted:#657087;--paper:#f5f6f8;--white:#fff;
+      --navy:#101827;--blue:#315cbb;--blue2:#5279d4;--line:#e3e7ee;
+      --soft:#edf2fc;--accent:#d9a84e;--radius:20px;
+      --shadow:0 14px 40px rgba(19,31,54,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1160px,calc(100% - 44px));margin:auto}
+    .eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+    .section{padding:88px 0}
+    .section-head{max-width:720px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.12;letter-spacing:-.04em;margin:10px 0 12px}
+    .section-head p{color:var(--muted);margin:0}
+    header{height:76px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .monogram{width:42px;height:42px;display:grid;place-items:center;background:var(--navy);color:white;border-radius:13px;font-size:.9rem}
+    .brand small{display:block;color:var(--muted);font-size:.68rem;font-weight:600;letter-spacing:.02em}
+    .navlinks{display:flex;align-items:center;gap:26px;font-size:.88rem;font-weight:650;color:#49536a}
+    .navlinks a:hover{color:var(--blue)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:12px;background:var(--blue);color:white;font-size:.88rem;font-weight:750;transition:.2s}
+    .nav-cta:hover,.button:hover{background:#244a9f;transform:translateY(-2px)}
+    .menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:9px 12px;color:var(--ink)}
+    .hero{background:var(--navy);color:white;padding:92px 0 86px;overflow:hidden;position:relative}
+    .hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-170px;top:-240px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.45fr .75fr;gap:70px;align-items:center}
+    .hero .eyebrow{color:#a9c2ff}
+    .hero h1{font-size:clamp(2.65rem,6vw,4.7rem);line-height:1.03;letter-spacing:-.055em;margin:18px 0 20px;max-width:760px}
+    .hero h1 span{color:#a9c2ff}
+    .hero-copy{max-width:680px;color:#c5ccda;font-size:1.04rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .button.secondary{background:transparent;border:1px solid rgba(255,255,255,.28);color:white}
+    .button.secondary:hover{background:rgba(255,255,255,.1)}
+    .hero-note{margin-top:28px;color:#aeb8ca;font-size:.82rem}
+    .portrait-wrap{padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:25px;background:rgba(255,255,255,.06);transform:rotate(2deg)}
+    .portrait{aspect-ratio:4/4.5;border-radius:17px;overflow:hidden;background:#26344b;display:grid;place-items:center;text-align:center;color:#c8d4ea;padding:20px}
+    .portrait img{width:100%;height:100%;object-fit:cover}
+    .portrait-placeholder strong{display:block;font-size:1.2rem;color:white}
+    .portrait-placeholder span{font-size:.8rem}
+    .quick-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .fact{border:1px solid rgba(255,255,255,.17);border-radius:999px;padding:7px 12px;color:#d8deea;font-size:.78rem}
+    .intro-strip{background:white;border-bottom:1px solid var(--line)}
+    .strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:23px 0}
+    .strip-item{font-size:.83rem;font-weight:750;color:#45516a;display:flex;align-items:center;gap:10px}
+    .strip-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;flex:none}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+    .panel{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .panel h3{font-size:1.12rem;margin:0 0 12px;letter-spacing:-.02em}
+    .panel p{margin:0;color:var(--muted)}
+    .education-list{display:grid;gap:18px}
+    .education-item{padding-left:18px;border-left:2px solid #cbd7f2}
+    .education-item strong{display:block}
+    .education-item span{font-size:.84rem;color:var(--muted)}
+    .experience{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .experience-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+    .experience-card h3{margin:7px 0 9px;font-size:1.16rem}
+    .experience-card p{margin:0;color:var(--muted);font-size:.94rem}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+    .tag{font-size:.74rem;font-weight:700;background:var(--soft);color:#31518e;padding:6px 10px;border-radius:8px}
+    .portfolio{background:#fff}
+    .portfolio-top{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:32px}
+    .filters{display:flex;flex-wrap:wrap;gap:7px;background:#f0f2f6;padding:5px;border-radius:12px}
+    .filter{border:0;background:transparent;color:#566176;padding:9px 13px;border-radius:9px;font-size:.8rem;font-weight:750;cursor:pointer}
+    .filter.active{background:var(--navy);color:white}
+    .project-section{margin-top:34px}
+    .project-section h3{font-size:1.25rem;margin:0 0 7px}
+    .project-section>p{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+    .project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .project-card{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:white;transition:.22s;cursor:pointer;display:flex;flex-direction:column}
+    .project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c5d2ef}
+    .project-media{aspect-ratio:4/5;background:#e8edf5;position:relative;overflow:hidden}
+    .project-media.video{aspect-ratio:9/14;background:#172033}
+    .project-media img,.project-media video{width:100%;height:100%;object-fit:cover;display:block}
+    .project-media video{pointer-events:none}
+    .media-label{position:absolute;top:11px;left:11px;background:rgba(16,24,39,.82);color:white;border-radius:7px;padding:5px 8px;font-size:.65rem;font-weight:750}
+    .play-indicator{position:absolute;inset:0;display:grid;place-items:center;color:white;background:linear-gradient(0deg,rgba(16,24,39,.4),transparent 55%)}
+    .play-indicator span{width:48px;height:48px;border-radius:50%;background:rgba(16,24,39,.72);display:grid;place-items:center;border:1px solid rgba(255,255,255,.6);font-size:1.1rem}
+    .project-info{padding:17px;display:flex;flex-direction:column;flex:1}
+    .project-type{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:850}
+    .project-info h4{font-size:1rem;line-height:1.35;margin:7px 0 9px}
+    .project-info p{font-size:.82rem;line-height:1.55;color:var(--muted);margin:0}
+    .project-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px}
+    .project-tools span{font-size:.68rem;background:#f0f3f8;color:#566176;padding:5px 8px;border-radius:6px;font-weight:700}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .skill-card{background:white;border:1px solid var(--line);border-radius:17px;padding:23px}
+    .skill-card h3{font-size:1rem;margin:0 0 13px}
+    .skill-card p{font-size:.86rem;color:var(--muted);margin:0}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill-list span{font-size:.78rem;font-weight:700;padding:7px 10px;background:#f0f3f8;border-radius:8px;color:#3f4b61}
+    .closing{background:var(--navy);color:white;padding:66px 0}
+    .closing-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .closing h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.1;margin:8px 0 12px;letter-spacing:-.04em}
+    .closing p{color:#c1cad9;margin:0;max-width:620px}
+    .closing .eyebrow{color:#a9c2ff}
+    footer{background:#0b1220;color:#aeb8ca;padding:22px 0;font-size:.78rem}
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .modal{position:fixed;inset:0;background:rgba(6,12,23,.84);z-index:50;display:none;align-items:center;justify-content:center;padding:22px}
+    .modal.open{display:flex}
+    .modal-box{width:min(980px,100%);max-height:90vh;overflow:auto;background:white;border-radius:20px;display:grid;grid-template-columns:1fr .85fr;position:relative}
+    .modal-media{background:#101827;min-height:420px;display:grid;place-items:center}
+    .modal-media img,.modal-media video,.modal-media iframe{max-width:100%;max-height:85vh;width:100%;height:100%;object-fit:contain;border:0}
+    .modal-copy{padding:34px}
+    .modal-copy h3{font-size:1.7rem;line-height:1.2;margin:8px 0 16px}
+    .modal-copy p{color:var(--muted);font-size:.92rem}
+    .modal-copy h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:22px 0 5px}
+    .close{position:absolute;right:12px;top:12px;border:0;background:rgba(16,24,39,.88);color:white;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.2rem;z-index:2}
+    .hidden{display:none!important}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr .65fr;gap:35px}.project-grid{grid-template-columns:repeat(2,1fr)}.strip-grid{grid-template-columns:repeat(2,1fr)}.skills-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){
+      .container{width:min(100% - 30px,560px)}.section{padding:65px 0}
+      .navlinks{display:none;position:absolute;left:0;right:0;top:76px;background:white;padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:14px}
+      .navlinks.show{display:flex}.nav-cta{text-align:center}.menu-toggle{display:block}
+      .hero{padding:65px 0}.hero-grid{grid-template-columns:1fr}.portrait-wrap{width:min(270px,80%);margin:10px auto 0;grid-row:1}
+      .hero h1{font-size:clamp(2.5rem,12vw,3.6rem)}.hero-copy{font-size:.96rem}
+      .strip-grid{gap:14px}.strip-item{font-size:.74rem}
+      .about-grid,.experience{grid-template-columns:1fr}
+      .portfolio-top{align-items:start;flex-direction:column}.project-grid{grid-template-columns:1fr 1fr;gap:11px}
+      .project-info{padding:12px}.project-info h4{font-size:.88rem}.project-info p{font-size:.76rem}
+      .skills-grid{grid-template-columns:1fr}.closing-grid{align-items:flex-start;flex-direction:column}
+      .modal-box{grid-template-columns:1fr}.modal-media{min-height:260px;max-height:48vh}.modal-copy{padding:23px}
+    }
+    @media(max-width:390px){.project-grid{grid-template-columns:1fr}.strip-grid{grid-template-columns:1fr 1fr}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="monogram">FT</span>
+      <span>Fabián Taboada Estrada<small>Diseño gráfico · Producción audiovisual</small></span>
+    </a>
+    <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
+      <a href="#perfil">Perfil</a><a href="#formacion">Formación</a><a href="#certificaciones">Certificaciones</a><a href="#experiencia">Experiencia</a><a href="#proyectos">Proyectos</a><a href="#habilidades">Habilidades</a><a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Portafolio profesional · 2026</div>
+        <h1>Diseño ideas y produzco contenido <span>que comunica.</span></h1>
+        <p class="hero-copy">Soy Fabián Taboada Estrada, con formación en Diseño Gráfico Digital y estudios de inglés hasta el nivel avanzado culminado. Actualmente estudio Ingeniería de Sistemas Computacionales. Combino creatividad, comunicación visual y herramientas digitales para desarrollar piezas gráficas y contenidos audiovisuales orientados a objetivos.</p>
+        <div class="quick-facts">
+          <span class="fact">Diseño gráfico</span><span class="fact">Ilustración digital</span><span class="fact">Edición audiovisual</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button" href="#proyectos">Ver proyectos&nbsp; ↗</a>
+          <a class="button secondary" href="mailto:cuentagame2017@gmail.com">Escribirme</a>
+        </div>
+        <div class="hero-note">Interesado en oportunidades laborales y prácticas en diseño y producción audiovisual.</div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <img src="assets/img/perfil.jpg" alt="Retrato de Fabián Taboada Estrada" onerror="this.remove();this.parentElement.innerHTML='<div class=&quot;portrait-placeholder&quot;><strong>Fabián Taboada Estrada</strong><span>Coloca tu fotografía en assets/img/perfil.jpg</span></div>'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="intro-strip">
+    <div class="container strip-grid">
+      <div class="strip-item"><span class="strip-dot"></span>Comunicación visual</div>
+      <div class="strip-item"><span class="strip-dot"></span>Diseño para medios digitales</div>
+      <div class="strip-item"><span class="strip-dot"></span>Producción de video</div>
+      <div class="strip-item"><span class="strip-dot"></span>Contenido para redes sociales</div>
+    </div>
+  </div>
+
+  <section class="section" id="perfil">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">01 · Perfil</div>
+        <h2>Sobre mí</h2>
+        <p>Una combinación de formación creativa, interés por la tecnología y experiencia práctica en comunicación.</p>
+      </div>
+      <div class="about-grid">
+        <article class="panel">
+          <h3>Perfil profesional</h3>
+          <p>Cuento con formación en Diseño Gráfico Digital en IDAT y actualmente curso Ingeniería de Sistemas Computacionales en la Universidad Privada del Norte (UPN). Además, culminé el nivel avanzado de inglés en ICPNA. Me especializo en desarrollar piezas gráficas y contenido audiovisual para plataformas digitales. Como responsable del área de comunicaciones de la Pastoral Juvenil de la Parroquia San José de Bellavista, participo en la planificación y elaboración de materiales visuales para sus actividades y publicaciones.</p>
+        </article>
+        <article class="panel" id="formacion">
+          <h3>Formación académica</h3>
+          <div class="education-list">
+            <div class="education-item"><strong>Ingeniería de Sistemas Computacionales</strong><span>Universidad Privada del Norte (UPN) · Estudios en curso</span></div>
+            <div class="education-item"><strong>Diseño Gráfico Digital</strong><span>Instituto IDAT · Formación académica</span></div>
+            <div class="education-item"><strong>Inglés · Nivel avanzado</strong><span>ICPNA · Nivel avanzado culminado</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certificaciones" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">02 · Certificaciones y formación complementaria</div>
+        <h2>Formación que respalda mi trabajo</h2>
+        <p>Documentación académica y formación complementaria relevante para mi desarrollo profesional.</p>
+      </div>
+      <div class="about-grid">
+        <article class="panel">
+          <h3>Certificado de Diseño Gráfico Digital</h3>
+          <p>Instituto IDAT. Documento que acredita mi formación en Diseño Gráfico Digital.</p>
+          <a class="button" href="assets/docs/certificado-idat.pdf" target="_blank" rel="noopener">Ver certificado PDF&nbsp; ↗</a>
+          
+        </article>
+        <article class="panel">
+          <h3>Inglés · Nivel avanzado</h3>
+          <p>ICPNA · Estudios de inglés con el nivel avanzado culminado.</p>
+          <p class="hero-note">Competencia complementaria para comprender información, recursos y referencias en inglés.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experiencia" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">03 · Experiencia práctica</div>
+        <h2>Comunicación y trabajo en equipo</h2>
+        <p>Participación en proyectos de comunicación y creación de contenido para una comunidad.</p>
+      </div>
+      <div class="experience">
+        <article class="experience-card">
+          <div class="eyebrow">Experiencia actual</div>
+          <h3>Área de Comunicaciones · Pastoral Juvenil</h3>
+          <p>Pastoral Juvenil de la Parroquia San José de Bellavista. Responsable del área de comunicaciones y participante en la elaboración de contenidos gráficos y audiovisuales para las actividades y publicaciones de la comunidad.</p>
+          <div class="tag-row"><span class="tag">Diseño de publicaciones</span><span class="tag">Contenido audiovisual</span><span class="tag">Redes sociales</span></div>
+        </article>
+        <article class="experience-card">
+          <div class="eyebrow">Áreas de participación</div>
+          <h3>Del concepto a la publicación</h3>
+          <p>Trabajo en piezas para redes sociales y contenidos audiovisuales, desde la preparación de recursos visuales hasta la edición y adaptación de materiales a formatos digitales.</p>
+          <div class="tag-row"><span class="tag">Planificación de contenido</span><span class="tag">Edición</span><span class="tag">Comunicación visual</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio" id="proyectos">
+    <div class="container">
+      <div class="portfolio-top">
+        <div class="section-head" style="margin:0">
+          <div class="eyebrow">03 · Selección de trabajos</div>
+          <h2>Proyectos</h2>
+          <p>Una selección de trabajos de producción audiovisual, ilustración digital y diseño para comunicación en redes.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar proyectos">
+          <button class="filter active" data-filter="all">Todos (8)</button>
+          <button class="filter" data-filter="video">Audiovisual (4)</button>
+          <button class="filter" data-filter="image">Diseño e ilustración (4)</button>
+        </div>
+      </div>
+
+      <div class="project-section" id="video-section">
+        <h3>Producción audiovisual</h3>
+        <p>Videos informativos, piezas conmemorativas y contenidos de orientación en formato vertical.</p>
+        <div class="project-grid" id="video-grid"></div>
+      </div>
+      <div class="project-section" id="image-section">
+        <h3>Diseño e ilustración digital</h3>
+        <p>Piezas gráficas e ilustraciones desarrolladas para comunicar celebraciones, fechas y mensajes de la comunidad.</p>
+        <div class="project-grid" id="image-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="habilidades">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">05 · Herramientas y competencias</div>
+        <h2>Recursos de trabajo</h2>
+        <p>Herramientas que utilizo en proyectos de diseño, edición y creación de contenido.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card"><h3>Diseño gráfico y editorial</h3><div class="skill-list"><span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>Adobe InDesign</span><span>Canva</span></div></article>
+        <article class="skill-card"><h3>Producción audiovisual</h3><div class="skill-list"><span>CapCut</span><span>Edición de video</span><span>Contenido vertical</span><span>Fotografía</span></div></article>
+        <article class="skill-card"><h3>Herramientas digitales</h3><div class="skill-list"><span>Herramientas de IA</span><span>Gemini</span><span>ElevenLabs</span><span>Recursos digitales</span></div></article>
+      </div>
+      <div class="panel" style="margin-top:18px">
+        <h3>Competencias de trabajo</h3>
+        <p>Organización de tareas, comunicación con equipos, adaptación de contenidos a distintos formatos y disposición para aprender nuevas herramientas y procesos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="contacto">
+    <div class="container closing-grid">
+      <div>
+        <div class="eyebrow">06 · Contacto</div>
+        <h2>Hablemos de tu próximo proyecto.</h2>
+        <p>Estoy interesado en oportunidades laborales y prácticas relacionadas con diseño gráfico y producción audiovisual. Puedes escribirme al siguiente correo.</p>
+      </div>
+      <a class="button" href="mailto:cuentagame2017@gmail.com">cuentagame2017@gmail.com&nbsp; ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Fabián Taboada Estrada</span>
+    <span>Portafolio profesional · Diseño gráfico y producción audiovisual</span>
+  </div>
+</footer>
+
+<div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="close" id="modal-close" aria-label="Cerrar">×</button>
+    <div class="modal-media" id="modal-media"></div>
+    <div class="modal-copy">
+      <div class="eyebrow" id="modal-category"></div>
+      <h3 id="modal-title"></h3>
+      <h4>Objetivo del proyecto</h4><p id="modal-purpose"></p>
+      <h4>Descripción</h4><p id="modal-description"></p>
+      <h4>Herramientas</h4><div class="tag-row" id="modal-tools"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const videoProjects = [
+ {title:"Fe en 60s: Visita Papal al Perú",badge:"Video informativo",duration:"01:01",src:"assets/videos/01_Video_Informativo_Visita_Papal_Peru.mp4",purpose:"Presentar de forma breve las fechas clave y la información principal sobre la visita papal al Perú.",description:"Video para el segmento “Fe en 60s”, con edición dinámica, recursos gráficos, textos en pantalla y efectos sonoros para organizar la información en un formato breve.",tools:["CapCut"]},
+ {title:"110 años: Parroquia San José de Bellavista",badge:"Storytelling histórico",duration:"01:32",src:"assets/videos/02_Video_Aniversario_Parroquial.mp4",purpose:"Compartir parte de la historia de la parroquia y conmemorar su aniversario con la comunidad.",description:"Video de carácter documental que combina intervenciones en locación, imágenes del templo, transiciones y subtítulos para presentar algunos elementos de la historia parroquial.",tools:["CapCut"]},
+ {title:"Teaser oficial: Viacrucis escenificado 2026",badge:"Video promocional",duration:"00:33",src:"assets/videos/04_Teaser_Promocional_Viacrucis.mp4",purpose:"Difundir la actividad y generar interés en la comunidad antes de su realización.",description:"Pieza promocional breve que reúne escenas de la representación, recursos visuales y textos de convocatoria en una edición de ritmo marcado.",tools:["CapCut"]},
+ {title:"Tutorial: Entradas para la Misa en Las Palmas",badge:"Video instructivo",duration:"00:43",src:"assets/videos/Misa_las_palmas.mp4",purpose:"Explicar de manera ordenada el proceso de registro para obtener entradas gratuitas.",description:"Tutorial con recursos de interfaz, indicaciones paso a paso y apoyo de herramientas digitales para facilitar la comprensión del procedimiento.",tools:["CapCut","Gemini","ElevenLabs"]}
+];
+const imageProjects = [
+ {title:"Ascensión del Señor",badge:"Ilustración digital",src:"assets/img/ascension.jpg",purpose:"Comunicar una solemnidad litúrgica mediante una pieza visual dirigida a la comunidad en redes sociales.",description:"Ilustración digital de la Ascensión del Señor, con composición de personajes y elementos gráficos acompañados de información conmemorativa.",tools:["Adobe Illustrator"]},
+ {title:"Festividad de San José",badge:"Ilustración digital",src:"assets/img/san-jose.jpg",purpose:"Acompañar la celebración del santo patrón de la parroquia con una publicación gráfica conmemorativa.",description:"Ilustración de San José con el Niño Jesús y elementos simbólicos asociados a su iconografía, preparada para difusión digital.",tools:["Adobe Illustrator"]},
+ {title:"3.er aniversario de Pastoral Juvenil",badge:"Diseño conmemorativo",src:"assets/img/aniversario-pj.jpg",purpose:"Conmemorar el aniversario y comunicar el sentido de pertenencia de los integrantes de la Pastoral Juvenil.",description:"Pieza gráfica conmemorativa que combina recursos ilustrados, composición tipográfica y fotografía grupal.",tools:["Adobe Illustrator"]},
+ {title:"Homenaje al Papa Francisco",badge:"Diseño gráfico y lettering",src:"assets/img/papa-francisco.jpg",purpose:"Compartir un mensaje del Papa Francisco mediante una composición gráfica de carácter conmemorativo.",description:"Diseño tipográfico con jerarquía visual, fotografía y una composición preparada para su publicación en redes sociales.",tools:["Canva"]}
+];
+
+function makeCard(item,type,index){
+ const media = type==="video"
+ ? `<div class="project-media video"><video src="${item.src}#t=0.5" preload="metadata" muted playsinline></video><span class="media-label">${item.badge} · ${item.duration}</span><div class="play-indicator"><span>▶</span></div></div>`
+ : `<div class="project-media"><img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.style.opacity='.15';this.insertAdjacentHTML('afterend','<span class=&quot;media-label&quot;>Añade el archivo de imagen</span>')"><span class="media-label">${item.badge}</span></div>`;
+ return `<article class="project-card" tabindex="0" role="button" aria-label="Ver proyecto: ${item.title}" data-type="${type}" data-index="${index}">${media}<div class="project-info"><div class="project-type">${type==="video"?"Producción audiovisual":"Diseño e ilustración"}</div><h4>${item.title}</h4><p>${item.purpose}</p><div class="project-tools">${item.tools.map(t=>`<span>${t}</span>`).join("")}</div></div></article>`;
+}
+function renderProjects(){
+ document.getElementById("video-grid").innerHTML=videoProjects.map((p,i)=>makeCard(p,"video",i)).join("");
+ document.getElementById("image-grid").innerHTML=imageProjects.map((p,i)=>makeCard(p,"image",i)).join("");
+}
+function openProject(type,index){
+ const item=(type==="video"?videoProjects:imageProjects)[index];
+ const media=document.getElementById("modal-media");
+ media.innerHTML=type==="video"
+ ? `<video src="${item.src}" controls autoplay playsinline></video>`
+ : `<img src="${item.src}" alt="${item.title}">`;
+ document.getElementById("modal-category").textContent=item.badge;
+ document.getElementById("modal-title").textContent=item.title;
+ document.getElementById("modal-purpose").textContent=item.purpose;
+ document.getElementById("modal-description").textContent=item.description;
+ document.getElementById("modal-tools").innerHTML=item.tools.map(t=>`<span class="tag">${t}</span>`).join("");
+ document.getElementById("project-modal").classList.add("open");
+ document.body.style.overflow="hidden";
+ document.getElementById("modal-close").focus();
+}
+function closeProject(){
+ document.getElementById("project-modal").classList.remove("open");
+ document.getElementById("modal-media").innerHTML="";
+ document.body.style.overflow="";
+}
+renderProjects();
+document.addEventListener("click",e=>{
+ const card=e.target.closest(".project-card");
+ if(card)openProject(card.dataset.type,Number(card.dataset.index));
+});
+document.addEventListener("keydown",e=>{
+ const card=e.target.closest?.(".project-card");
+ if(card&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openProject(card.dataset.type,Number(card.dataset.index))}
+ if(e.key==="Escape")closeProject();
+});
+document.getElementById("modal-close").addEventListener("click",closeProject);
+document.getElementById("project-modal").addEventListener("click",e=>{if(e.target.id==="project-modal")closeProject()});
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");
+ const value=btn.dataset.filter;
+ document.getElementById("video-section").classList.toggle("hidden",value==="image");
+ document.getElementById("image-section").classList.toggle("hidden",value==="video");
+}));
+const menuToggle=document.getElementById("menu-toggle"),navlinks=document.getElementById("navlinks");
+menuToggle.addEventListener("click",()=>{const shown=navlinks.classList.toggle("show");menuToggle.setAttribute("aria-expanded",String(shown));menuToggle.textContent=shown?"×":"☰"});
+navlinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navlinks.classList.remove("show");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="☰"}));
+</script>
+</body>
+</html>
